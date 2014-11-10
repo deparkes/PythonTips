@@ -18,19 +18,16 @@ while file_count < FileList_length:
 	print "Modify the file now, if you want"
 	a=raw_input()
 	
-	# not sure why there is this while loop here
-	# check this actually needs to be here.
-	# use a try - except block to catch any failure to load the file
-	while True:
-		try:
-			file_list_new = open('./FileList.txt').read().splitlines()
-			if FileList != file_list_new:
-				FileList = file_list_new
-				print(FileList)
-				print('New list loaded successfully');
-			break
-		except ValueError:
-			print('Error loading new file\nWill try again next time.')
+
+	try:
+		file_list_new = open('./FileList.txt').read().splitlines()
+		if FileList != file_list_new:
+			FileList = file_list_new
+			print(FileList)
+			print('New list loaded successfully');
+		break
+	except ValueError:
+		print('Error loading new file\nWill try again next time.')
 	FileList_length = len(FileList)
 	file_count = file_count + 1
        

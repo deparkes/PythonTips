@@ -1,8 +1,0 @@
-# Data file name
-# This is a header line
-# So is this
-This
-is
-# This is an intermediate comment line
-some
-data
